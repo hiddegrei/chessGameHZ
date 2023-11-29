@@ -12,7 +12,7 @@ Om de game te runnen moet u het ChessFrame.java bestand in /src/chessgui runnen.
 
 ## Creational Patterns
 
-** Factory method **
+**Factory method**
 
 In de chess game heb ik gebruikt van de factory method. De Queen, King, Rook, Pawn and Knight classes en
 extenden allemaal de Piece class en implementeren hun eigen methoden voor bijvoorbeeld het bepalen van een legale zet.
