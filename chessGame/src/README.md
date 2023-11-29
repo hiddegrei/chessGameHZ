@@ -1,4 +1,4 @@
-# Chess game in Java met een gebruikers user interface.
+#### Chess game in Java met een gebruikers user interface.
 Game heeft op 'stale mate' na alle eigenschappen van een schaak spel. 
 Dit betekend:
 - De mogelijke posities van de king worden bepaald.
