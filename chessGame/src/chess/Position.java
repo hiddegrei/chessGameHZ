@@ -41,7 +41,11 @@ public class Position {
 		ArrayList<Integer> newpos = new ArrayList();
 		newpos.add(this.position.get(0));
 		newpos.add(this.position.get(1));
-		Piece newPiece = this.getPiece();
+		Piece newPiece = null;
+		if(piece != null) {
+			newPiece = piece.copy();
+		}
+		
 		return new Position(newpos,newPiece);
 	}
 	
