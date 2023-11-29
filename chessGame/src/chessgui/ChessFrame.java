@@ -69,6 +69,9 @@ public class ChessFrame extends JFrame {
 		
 	}
 	
+	/**
+	 * Creates the buttons of the chess pieces.
+	 */
 	public void createChessFrame() {
 		
 		 
@@ -96,6 +99,10 @@ public class ChessFrame extends JFrame {
 		}
 	}
 	
+	/**
+	 * function fired when player clicks on a piece.
+	 * @param e
+	 */
 	public void clickedOnPiece(ActionEvent e) {
 		JButton clickedButton = (JButton) e.getSource();
 
@@ -110,6 +117,9 @@ public class ChessFrame extends JFrame {
 	        }  
 	}
 	
+	/**
+	 * Get the positions of the chess and update the game on the screen.
+	 */
 	public void updateGame() {
 		 ArrayList<ArrayList<Position>> positions = game.getPositions();
 		 renderPositions(positions);
@@ -119,6 +129,9 @@ public class ChessFrame extends JFrame {
 			}
 	}
 	
+	/**
+	 * Create the chess frame and start the game.
+	 */
 	public void gameInit() {
 		createChessFrame();
 		game.startGame();
@@ -126,6 +139,9 @@ public class ChessFrame extends JFrame {
 		
 	}
 	
+	/**
+	 * Render game over screen when game is over.
+	 */
 	public void renderGameOver() {
 		JLabel label2 = new JLabel("game over");
 		if(game.getPlayerAtTurn().getSide() == Player.Side.BLACK) {
@@ -147,22 +163,34 @@ public class ChessFrame extends JFrame {
 		contentPane.repaint();
 	}
 
+	/**
+	 * Initialize start screen.
+	 */
 	public void mijnInit() {
 		
 		cleanScreen();
 		renderStartScreen();
 	}
 	
+	/**
+	 * Removes all componenents on the screen.
+	 */
 	public void cleanScreen() {
 		contentPane.removeAll();
 	}
 	
+	/**
+	 * Start the game
+	 */
 	public void startGame() {
 		cleanScreen();
 		game.setGameDone(false);
 		gameInit();
 	}
 	
+	/**
+	 * Render start screen.
+	 */
 	public void renderStartScreen() {
 		JButton button = new JButton("Start");
 		button.setBounds(300, 200, 100, 100);
@@ -177,7 +205,10 @@ public class ChessFrame extends JFrame {
 	}
 	
 	
-
+    /**
+     * Render current positions of the chessboard.
+     * @param positions
+     */
 	public void renderPositions( ArrayList<ArrayList<Position>> positions) {
 		 Player playerAtTurn = game.getPlayerAtTurn();
          Position activePosition = playerAtTurn.getActivePosition();
